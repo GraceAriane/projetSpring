@@ -43,6 +43,15 @@ public class Loan {
 
     @Column(name = "penalty", nullable = false)
     private Double penalty = 0.0;
+    public Loan(){}
+    public Loan( User user, Book book, LocalDate loanDate, LocalDate expectedReturnDate, LoanStatus status, Double penalty){
+        this.user = user;
+        this.book = book;
+        this.loanDate = loanDate;
+        this.expectedReturnDate = expectedReturnDate;
+        this.status = status;
+        this.penalty = penalty;
+    }
     
 	public Long getId() {
 		return id;
