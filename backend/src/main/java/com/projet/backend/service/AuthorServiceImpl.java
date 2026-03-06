@@ -17,21 +17,37 @@ public class AuthorServiceImpl implements AuthorService{
         this.repository = repository;
     }
 
+    /** 
+     * @param author
+     * @return Author
+     */
     @Override
     public Author saveAuthor(Author author) {
         return repository.save(author);
     }
 
+    /** 
+     * @param id
+     * @return Optional<Author>
+     */
     @Override
     public Optional<Author> getAuthorId(Long id) {
         return repository.findById(id);
     }
 
+    /** 
+     * @param id
+     */
     @Override
     public void deleteAuthorById(Long id) {
         repository.deleteById(id);
     }
 
+    /** 
+     * @param id
+     * @param newAuthor
+     * @return Author
+     */
     @Override
     public Author updateAuthor(Long id, Author newAuthor) {
         return repository.findById(id)
@@ -41,6 +57,9 @@ public class AuthorServiceImpl implements AuthorService{
                 }).orElse(null);
     }
 
+    /** 
+     * @return List<Author>
+     */
     @Override
     public List<Author> getAllAuthor() {
         return repository.findAll();

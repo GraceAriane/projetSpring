@@ -28,26 +28,44 @@ public class Author {
 	@JsonIgnore
 	private List<Book> books;
 
+	/** 
+	 * @return Long
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/** 
+	 * @param id
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/** 
+	 * @return String
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/** 
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/** 
+	 * @return List<Book>
+	 */
 	public List<Book> getBooks() {
 		return books;
 	}
 
+	/** 
+	 * @param books
+	 */
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}

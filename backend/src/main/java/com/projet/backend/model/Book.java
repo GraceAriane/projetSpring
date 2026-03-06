@@ -45,66 +45,114 @@ public class Book {
 	private Category category;
 
 
+	/** 
+	 * @return Long
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/** 
+	 * @param id
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/** 
+	 * @return String
+	 */
 	public String getTitle() {
 		return title;
 	}
 
+	/** 
+	 * @param title
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
+	/** 
+	 * @return String
+	 */
 	public String getIsbn() {
 		return isbn;
 	}
 
+	/** 
+	 * @param isbn
+	 */
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
+	/** 
+	 * @return String
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/** 
+	 * @param description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
+	/** 
+	 * @return int
+	 */
 	public int getTotalQuantity() {
 		return totalQuantity;
 	}
 
+	/** 
+	 * @param totalQuantity
+	 */
 	public void setTotalQuantity(int totalQuantity) {
 		this.totalQuantity = totalQuantity;
 	}
 
+	/** 
+	 * @return int
+	 */
 	public int getAvailableQuantity() {
 		return availableQuantity;
 	}
 
+	/** 
+	 * @param availableQuantity
+	 */
 	public void setAvailableQuantity(int availableQuantity) {
 		this.availableQuantity = availableQuantity;
 	}
 
+	/** 
+	 * @return Author
+	 */
 	public Author getAuthor() {
 		return author;
 	}
 
+	/** 
+	 * @param author
+	 */
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
+	/** 
+	 * @return Category
+	 */
 	public Category getCategory() {
 		return category;
 	}
 
+	/** 
+	 * @param category
+	 */
 	public void setCategory(Category category) {
 		this.category = category;
 	}

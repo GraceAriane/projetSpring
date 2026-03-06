@@ -17,22 +17,38 @@ public class CategoryServiceImpl implements CategoryService{
         this.repository=repository;
     }
 
+    /** 
+     * @param category
+     * @return Category
+     */
     @Override
     public Category saveCategory(Category category) {
 
         return repository.save(category);
     }
 
+    /** 
+     * @param id
+     * @return Optional<Category>
+     */
     @Override
     public Optional<Category> getCategoryById(Long id) {
         return repository.findById(id);
     }
 
+    /** 
+     * @param id
+     */
     @Override
     public void deleteCategoryById(Long id) {
         repository.deleteById(id);
     }
 
+    /** 
+     * @param id
+     * @param newCategory
+     * @return Category
+     */
     @Override
     public Category updateCategory(Long id, Category newCategory) {
         return repository.findById(id)
@@ -42,6 +58,9 @@ public class CategoryServiceImpl implements CategoryService{
                 }).orElse(null);
     }
 
+    /** 
+     * @return List<Category>
+     */
     @Override
     public List<Category> getAllCategory() {
         return repository.findAll();

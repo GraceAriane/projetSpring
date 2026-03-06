@@ -15,21 +15,37 @@ public class LoanServiceImpl implements LoanService{
         this.repository=repository;
     }
 
+    /** 
+     * @param loan
+     * @return Loan
+     */
     @Override
     public Loan saveLoan(Loan loan) {
         return repository.save(loan);
     }
 
+    /** 
+     * @param id
+     * @return Optional<Loan>
+     */
     @Override
     public Optional<Loan> getLoanId(Long id) {
         return repository.findById(id);
     }
 
+    /** 
+     * @param id
+     */
     @Override
     public void deleteLoanById(Long id) {
         repository.deleteById(id);
     }
 
+    /** 
+     * @param id
+     * @param newLoan
+     * @return Loan
+     */
     @Override
     public Loan updateLoan(Long id, Loan newLoan) {
         return repository.findById(id)
@@ -39,6 +55,9 @@ public class LoanServiceImpl implements LoanService{
                 }).orElse(null);
     }
 
+    /** 
+     * @return List<Loan>
+     */
     @Override
     public List<Loan> getAllLoan() {
         return repository.findAll();

@@ -18,21 +18,37 @@ public class UserServiceImpl implements UserService{
         this.repository=repository;
     }
 
+    /** 
+     * @param user
+     * @return User
+     */
     @Override
     public User saveUser(User user) {
         return repository.save(user);
     }
 
+    /** 
+     * @param id
+     * @return Optional<User>
+     */
     @Override
     public Optional<User> getUserById(Long id) {
         return repository.findById(id);
     }
 
+    /** 
+     * @param id
+     */
     @Override
     public void deleteUserById(Long id) {
         repository.deleteById(id);
     }
 
+    /** 
+     * @param id
+     * @param newUser
+     * @return User
+     */
     @Override
     public User updateUser(Long id, User newUser) {
         return repository.findById(id)
@@ -42,6 +58,9 @@ public class UserServiceImpl implements UserService{
                 }).orElse(null);
     }
 
+    /** 
+     * @return List<User>
+     */
     @Override
     public List<User> getAllUsers() {
         return repository.findAll();

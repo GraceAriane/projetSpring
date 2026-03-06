@@ -44,58 +44,100 @@ public class Loan {
     @Column(name = "penalty", nullable = false)
     private Double penalty = 0.0;
     
+	/** 
+	 * @return Long
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/** 
+	 * @param id
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/** 
+	 * @return User
+	 */
 	public User getUser() {
 		return user;
 	}
 
+	/** 
+	 * @param user
+	 */
 	public void setUser(User user) {
 		this.user = user;
 	}
 
+	/** 
+	 * @return Book
+	 */
 	public Book getBook() {
 		return book;
 	}
 
+	/** 
+	 * @param book
+	 */
 	public void setBook(Book book) {
 		this.book = book;
 	}
 
+	/** 
+	 * @return LocalDate
+	 */
 	public LocalDate getLoanDate() {
 		return loanDate;
 	}
 
+	/** 
+	 * @param loanDate
+	 */
 	public void setLoanDate(LocalDate loanDate) {
 		this.loanDate = loanDate;
 	}
 
+	/** 
+	 * @return LocalDate
+	 */
 	public LocalDate getExpectedReturnDate() {
 		return expectedReturnDate;
 	}
 
+	/** 
+	 * @param expectedReturnDate
+	 */
 	public void setExpectedReturnDate(LocalDate expectedReturnDate) {
 		this.expectedReturnDate = expectedReturnDate;
 	}
 
+	/** 
+	 * @return LoanStatus
+	 */
 	public LoanStatus getStatus() {
 		return status;
 	}
 
+	/** 
+	 * @param status
+	 */
 	public void setStatus(LoanStatus status) {
 		this.status = status;
 	}
 
+	/** 
+	 * @return Double
+	 */
 	public Double getPenalty() {
 		return penalty;
 	}
 
+	/** 
+	 * @param penalty
+	 */
 	public void setPenalty(Double penalty) {
 		this.penalty = penalty;
 	}

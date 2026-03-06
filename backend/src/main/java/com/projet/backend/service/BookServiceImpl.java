@@ -19,23 +19,39 @@ public class BookServiceImpl implements BookService{
         this.repository=repository;
     }
 
+    /** 
+     * @param book
+     * @return Book
+     */
     @Override
     public Book saveBook(Book book) {
 
         return repository.save(book);
     }
 
+    /** 
+     * @param id
+     * @return Optional<Book>
+     */
     @Override
     public Optional<Book> getBookById(Long id) {
         return repository.findById(id);
     }
 
 
+    /** 
+     * @param id
+     */
     @Override
     public void deleteBookById(Long id) {
         repository.deleteById(id);
     }
 
+    /** 
+     * @param id
+     * @param newBook
+     * @return Book
+     */
     @Override
     public Book updateBook(Long id, Book newBook) {
         return repository.findById(id)
@@ -45,6 +61,9 @@ public class BookServiceImpl implements BookService{
                 }).orElse(null);
     }
 
+    /** 
+     * @return List<Book>
+     */
     @Override
     public List<Book> getAllBook() {
         return repository.findAll();
