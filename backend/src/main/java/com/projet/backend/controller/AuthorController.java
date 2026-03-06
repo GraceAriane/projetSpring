@@ -5,6 +5,7 @@ import com.projet.backend.service.AuthorService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -40,7 +41,7 @@ import java.util.Optional;
  *
  * @author
  */
-
+@Tag(name = "Auteurs", description = "Gestion des auteurs")
 @RestController
 @RequestMapping("/api/authors")
 public class AuthorController {

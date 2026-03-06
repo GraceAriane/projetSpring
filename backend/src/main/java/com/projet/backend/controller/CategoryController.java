@@ -6,6 +6,7 @@ import com.projet.backend.service.CategoryService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -39,7 +40,7 @@ import java.util.Optional;
  *
  * @author
  */
-
+@Tag(name = "Catégories", description = "Gestion des catégories des livres")
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController {
