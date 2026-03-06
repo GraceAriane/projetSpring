@@ -2,6 +2,7 @@ package com.projet.backend.model;
 
 import java.time.LocalDate;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -12,36 +13,83 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
+/**
+ * <h2>Entité représentant un emprunt de livre</h2>
+ *
+ * <p>
+ * Cette classe représente un emprunt effectué par un utilisateur
+ * dans le système de gestion de bibliothèque.
+ * </p>
+ *
+ * <p>
+ * Un emprunt associe :
+ * </p>
+ *
+ * <ul>
+ *     <li>un utilisateur</li>
+ *     <li>un livre</li>
+ *     <li>une date d'emprunt</li>
+ *     <li>une date de retour prévue</li>
+ *     <li>un statut d'emprunt</li>
+ *     <li>une éventuelle pénalité</li>
+ * </ul>
+ */
 @Entity
 @Table(name="loan")
+@Schema(description = "Représente un emprunt de livre")
 public class Loan {
 	
+    /**
+     * Identifiant unique de l'emprunt.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Identifiant de l'emprunt", example = "1")
+    private Long id;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private Long id;
-	
+    /**
+     * Utilisateur ayant effectué l'emprunt.
+     */
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @Schema(description = "Utilisateur ayant emprunté le livre")
     private User user;
 
+    /**
+     * Livre emprunté.
+     */
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
+    @Schema(description = "Livre emprunté")
     private Book book;
-	
-	@Column(name="loan_date", nullable = false)
-	private LocalDate loanDate;
-	
+
+    /**
+     * Date à laquelle le livre a été emprunté.
+     */
+    @Column(name="loan_date", nullable = false)
+    @Schema(description = "Date d'emprunt", example = "2026-03-06")
+    private LocalDate loanDate;
+
+    /**
+     * Date prévue pour le retour du livre.
+     */
     @Column(name = "expected_return_date", nullable = false)
+    @Schema(description = "Date de retour prévue", example = "2026-03-20")
     private LocalDate expectedReturnDate;
 
+    /**
+     * Statut de l'emprunt.
+     */
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
+    @Schema(description = "Statut de l'emprunt", example = "ACTIVE")
     private LoanStatus status;
 
+    /**
+     * Montant de la pénalité en cas de retard.
+     */
     @Column(name = "penalty", nullable = false)
+    @Schema(description = "Pénalité appliquée en cas de retard", example = "0.0")
     private Double penalty = 0.0;
     
 	/** 
